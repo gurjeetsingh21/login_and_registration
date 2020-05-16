@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+{% block titleblock %}
+  <title>Login</title>
+{% endblock %}
+
+{% block bodyblock %}
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Login</h2>
+
+      <form action="{% url 'app:login' %}" method="post">
+        {% csrf_token %}
+        <p><label for="username">Username:</label>
+        <input type="text" name="username" value="Username"></p>
+
+        <p><label for="password">Password:</label>
+        <input type="password" name="password"></p>
+
+        <p><button id='button' class="btn btn-primary">Login</button>     <a id="button" class="btn btn-primary" href="{% url 'reset_password' %}">Forgot Password</a></p>
+      </form>
+    </div>
+  </div>
+{% endblock %}

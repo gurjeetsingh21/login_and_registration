@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% block titleblock %}
+  <title>Register</title>
+{% endblock %}
+{% block bodyblock %}
+  <div class="container">
+    <div class="jumbotron">
+      {% if registered %}
+        <h2>Thank you for Registering</h2>
+      {% else %}
+        <!-- <div class="container"> -->
+          <h2>Register</h2>
+          <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button id='button' class="btn btn-primary">Register</button>
+          </form>
+        <!-- </div> -->
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
